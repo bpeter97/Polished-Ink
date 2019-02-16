@@ -46,26 +46,44 @@
   };
   // Collapse now if page is not at top
   navbarCollapse();
+
+  // Create the smooth scroll effect on parallax header
+  var parallaxSmoothScroll = function() {
+    var masthead = document.querySelector(".masthead");
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
+    }
+
+    window.addEventListener("DOMContentLoaded", scrollLoop, false);
+
+    var xScrollPosition;
+    var yScrollPosition;
+
+    function scrollLoop() {
+      xScrollPosition = window.scrollX;
+      yScrollPosition = window.scrollY;
+
+      setTranslate(0, yScrollPosition * -0.1, masthead);
+
+      requestAnimationFrame(scrollLoop);
+    }
+  };
+
+  parallaxSmoothScroll();
+
+  // fade header content on scroll
+  var masthead = $(".header-content");
+
+  $(window).scroll(function() {
+    var st = $(this).scrollTop();
+
+    masthead.css({
+      opacity: 1 - st / 450
+    });
+  });
+
   // Collapse the navbar when page is scrolled
   $(window).scroll(navbarCollapse);
-
-  var masthead = document.querySelector(".masthead");
-
-  function setTranslate(xPos, yPos, el) {
-    el.style.transform = "translate3d(" + xPos + ", " + yPos + "px, 0)";
-  }
-
-  window.addEventListener("DOMContentLoaded", scrollLoop, false);
-
-  var xScrollPosition;
-  var yScrollPosition;
-
-  function scrollLoop() {
-    xScrollPosition = window.scrollX;
-    yScrollPosition = window.scrollY;
-
-    setTranslate(0, yScrollPosition * -0.1, masthead);
-
-    requestAnimationFrame(scrollLoop);
-  }
+  $(window).scroll(parallaxHeader);
 })(jQuery); // End of use strict

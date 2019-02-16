@@ -37,6 +37,31 @@
 }
 
 .btn-xl {
-  font-size: 11px;
-  padding: 15px 45px;
+  font-size: 18px;
+  padding: 10px 35px;
+  font-weight: bold;
+}
+
+.btn-xl-book {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: $dark-theme-primary;
+  border-color: $dark-theme-primary;
+  padding: 10px 35px;
+}
+
+.btn-scroll-arrow {
+  position: absolute;
+  z-index: 2;
+  top: 200%;
+  bottom: 0;
+  left: 42%;
+  font-weight: bold;
+  font-size: 56px;
+  width: 100px;
+  border: none;
+  padding: 0px;
+  &:hover {
+    color: $theme-primary;
+  }
 }

@@ -74,6 +74,12 @@
   letter-spacing: 2px;
 }
 
+@mixin landing-font {
+  font-family: "Muli", "Helvetica", "Arial", "sans-serif";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 @mixin body-font {
   font-family: "Muli", "Helvetica", "Arial", "sans-serif";
 }

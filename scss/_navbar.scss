@@ -1,14 +1,13 @@
 // Styling for the navbar
 #mainNav {
-  padding-top: 15px;
   border-color: fade-out($gray-darker, 0.95);
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.822);
   @include transition-all;
   @include heading-font;
   .navbar-brand {
     padding: 0px;
     .header-logo {
-      -webkit-transform: scale(1);
+      -webkit-transform: scale(0.6);
       @include transition-all;
     }
     color: white;
@@ -20,9 +19,10 @@
     }
   }
   .navbar-toggler {
-    font-size: 12px;
+    font-size: 18px;
     padding: 8px 10px;
     color: $gray-darker;
+    background-color: rgba(255, 255, 255, 0.959);
   }
   .navbar-nav {
     > li {
@@ -50,9 +50,14 @@
     }
   }
   @media (min-width: 992px) {
+    padding-top: 15px;
     border-color: transparent;
     background-color: transparent;
     .navbar-brand {
+      .header-logo {
+        -webkit-transform: scale(1);
+        @include transition-all;
+      }
       color: fade(white, 70%);
       &:hover,
       &:focus {

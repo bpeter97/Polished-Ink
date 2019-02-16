@@ -12,7 +12,7 @@ header.masthead {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   .header-content {
     margin-bottom: 100px;
 
@@ -22,6 +22,44 @@ header.masthead {
     }
     .header-landing-text {
       @include landing-font;
+      @media (min-width: 0px) and (max-width: 991px) {
+        margin-top: 7rem;
+      }
+    }
+    @media (min-width: 0px) and (max-width: 509px) {
+      .btn-xl {
+        font-size: 18px;
+        padding: 10px 35px;
+        font-weight: bold;
+        margin-right: 0px;
+      }
+
+      .btn-xl-book {
+        font-weight: bold;
+        font-size: 18px;
+        background-color: $dark-theme-primary;
+        border-color: $dark-theme-primary;
+        padding: 10px 35px;
+        margin-left: 0px;
+        margin-bottom: 10px;
+      }
+    }
+    @media (min-width: 510px) {
+      .btn-xl {
+        font-size: 18px;
+        padding: 10px 35px;
+        font-weight: bold;
+        margin-right: 0px;
+      }
+
+      .btn-xl-book {
+        font-weight: bold;
+        font-size: 18px;
+        background-color: $dark-theme-primary;
+        border-color: $dark-theme-primary;
+        padding: 10px 35px;
+        margin-left: 0px;
+      }
     }
   }
   .device-container {

@@ -64,7 +64,7 @@
       xScrollPosition = window.scrollX;
       yScrollPosition = window.scrollY;
 
-      setTranslate(0, yScrollPosition * -0.1, masthead);
+      setTranslate(0, yScrollPosition * -0.04, masthead);
 
       requestAnimationFrame(scrollLoop);
     }
@@ -79,7 +79,7 @@
     var st = $(this).scrollTop();
 
     masthead.css({
-      opacity: 1 - st / 450
+      opacity: 1 - st / 600
     });
   });
 
